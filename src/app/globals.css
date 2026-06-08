@@ -1,0 +1,331 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-inter-tight), ui-sans-serif, system-ui, sans-serif;
+  --font-fustat: var(--font-fustat), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --font-heading: var(--font-fustat), ui-sans-serif, system-ui, sans-serif;
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) * 0.6);
+  --radius-md: calc(var(--radius) * 0.8);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 1.4);
+  --radius-2xl: calc(var(--radius) * 1.8);
+  --radius-3xl: calc(var(--radius) * 2.2);
+  --radius-4xl: calc(var(--radius) * 2.6);
+
+  /* Velluxia breakpoints */
+  --breakpoint-tablet: 811px;
+  --breakpoint-desktop: 1280px;
+  --breakpoint-desktopDefault: 1280px;
+  --breakpoint-desktopXL: 1441px;
+}
+
+:root {
+  /* Velluxia color tokens */
+  --background: #F8FAFC;
+  --foreground: #1E293B;
+  --card: #ffffff;
+  --card-foreground: #1E293B;
+  --popover: #ffffff;
+  --popover-foreground: #1E293B;
+  --primary: #1E3A8A;
+  --primary-foreground: #ffffff;
+  --secondary: #7C3AED;
+  --secondary-foreground: #ffffff;
+  --muted: #F1F5F9;
+  --muted-foreground: #64748B;
+  --accent: #7C3AED;
+  --accent-foreground: #ffffff;
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: #E2E8F0;
+  --input: #E2E8F0;
+  --ring: #7C3AED;
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #1E293B;
+  --sidebar-primary: #1E3A8A;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #F1F5F9;
+  --sidebar-accent-foreground: #1E3A8A;
+  --sidebar-border: #E2E8F0;
+  --sidebar-ring: #7C3AED;
+
+  /* Velluxia brand tokens */
+  --page-bg: #F8FAFC;
+  --accent-green: #16A34A;
+  --dark-slate: #0F172A;
+  --deep-blue: #1E3A8A;
+  --tech-violet: #7C3AED;
+  --nav-text: #64748B;
+  --stripe-color: rgba(226, 232, 240, 0.8);
+  --border-color: #E2E8F0;
+  --light-violet-bg: #EDE9FE;
+  --accent-text: #7C3AED;
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-inter-tight), sans-serif;
+  }
+  body {
+    background-color: var(--page-bg);
+    color: var(--foreground);
+    font-family: var(--font-inter-tight), sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
+
+/* ============================================================
+   Layout utility classes (ported from original site)
+   ============================================================ */
+
+/* Content-side: decorative side panels with diagonal stripe bg */
+.content-side,
+.content-side-minimal {
+  display: none;
+}
+
+.content-side.responsive {
+  display: block;
+  min-width: 24px;
+  flex: 1 1 auto;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+/* bg-stripes: diagonal stripe pattern for side panels */
+.bg-stripes {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(226, 232, 240, 0.8) 0px,
+    rgba(226, 232, 240, 0.8) 1px,
+    transparent 1px,
+    transparent 14px
+  ) #ffffff;
+}
+
+/* custom-border: dashed vertical separator line */
+.custom-border {
+  width: 1px;
+  background: repeating-linear-gradient(
+    rgb(226, 232, 240) 0px,
+    rgb(226, 232, 240) 8px,
+    transparent 8px,
+    transparent 16px
+  );
+}
+
+/* hero-bg: lime radial gradient on white */
+.hero-bg {
+  background: radial-gradient(
+    246.6% 88.54% at 37.12% 5.43%,
+    rgba(255, 255, 255, 0) 56.43%,
+    rgb(124, 58, 237) 80.92%,
+    rgb(30, 58, 138) 100%
+  ), #ffffff;
+}
+
+/* clip-text: text gradient clip */
+.clip-text {
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* clamp responsive sizes for hero SVG mockups */
+.clamp-desktop-width {
+  width: clamp(476px, 35.86px + 112.86vw, 950px);
+}
+.clamp-desktop-height {
+  height: clamp(298px, 23.13px + 70.48vw, 594px);
+}
+.clamp-mobile-width {
+  width: clamp(109px, 7.79px + 25.95vw, 218px);
+}
+.clamp-mobile-height {
+  height: clamp(243px, 17.36px + 57.86vw, 486px);
+}
+
+/* ============================================================
+   Font utilities
+   ============================================================ */
+.font-fustat {
+  font-family: var(--font-fustat), sans-serif;
+}
+
+.font-interTight {
+  font-family: var(--font-inter-tight), sans-serif;
+}
+
+/* ============================================================
+   Animations
+   ============================================================ */
+
+/* Pulse slow variants for floating hero badges */
+.animate-pulse-slow-1 {
+  animation: pulse 3.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.animate-pulse-slow-2 {
+  animation: pulse 4.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.animate-pulse-slow-3 {
+  animation: pulse 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.animate-pulse-slow-4 {
+  animation: pulse 3.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.animate-pulse-slow-5 {
+  animation: pulse 4.2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+.animate-pulse-slow-6 {
+  animation: pulse 4.8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Skeleton shimmer (DaisyUI-compatible) */
+.skeleton {
+  border-radius: 1rem;
+  background-color: oklch(0.8015 0 0);
+  will-change: background-position;
+  animation: skeleton 1.8s ease-in-out infinite;
+  background-image: linear-gradient(
+    105deg,
+    transparent 0,
+    transparent 40%,
+    oklch(1 0 0) 50%,
+    transparent 60%,
+    transparent 100%
+  );
+  background-size: 200%;
+  background-repeat: no-repeat;
+  background-position-x: -50%;
+}
+
+@keyframes skeleton {
+  0% { background-position: 150% center; }
+  100% { background-position: -50% center; }
+}
+
+/* Testimonials marquee */
+@keyframes marquee-left {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+@keyframes marquee-right {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 30s linear infinite;
+}
+.animate-marquee-right {
+  animation: marquee-right 30s linear infinite;
+}
+.animate-marquee-left-slow {
+  animation: marquee-left 40s linear infinite;
+}
+
+/* ============================================================
+   Responsive breakpoints
+   ============================================================ */
+@media screen and (min-width: 811px) {
+  .content-side {
+    display: block;
+    flex: 1 1 auto;
+    min-width: 88px;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  .content-side.responsive {
+    min-width: 32px;
+  }
+  .max-content-width {
+    max-width: 680px;
+  }
+  .content-side.disable-desktop {
+    display: block !important;
+  }
+  .hero-bg {
+    background: radial-gradient(
+      246.6% 88.54% at 37.12% 5.43%,
+      rgba(255, 255, 255, 0) 56.43%,
+      rgb(124, 58, 237) 80.92%,
+      rgb(30, 58, 138) 100%
+    ), #ffffff;
+  }
+}
+
+@media screen and (min-width: 1441px) {
+  .max-content-width {
+    max-width: 1136px;
+  }
+  .content-side {
+    min-width: 119px;
+  }
+  .content-side-minimal {
+    display: block;
+    min-width: 63px;
+    background-color: #ffffff;
+    overflow: hidden;
+  }
+  .content-center {
+    max-width: 1200px;
+  }
+  .hero-bg {
+    background: radial-gradient(
+      200% 300% at -30% -60%,
+      rgba(255, 255, 255, 0) 56.43%,
+      rgb(124, 58, 237) 70.92%,
+      rgb(30, 58, 138) 100%
+    ), #ffffff;
+  }
+}
+
+@media screen and (min-width: 1699px) {
+  .max-content-width {
+    max-width: 1312px;
+  }
+  .content-side-minimal {
+    min-width: 103px;
+  }
+  .content-center {
+    max-width: 1520px;
+  }
+  .content-side.responsive {
+    min-width: 88px;
+  }
+}
