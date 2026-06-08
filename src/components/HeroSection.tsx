@@ -50,12 +50,12 @@ export default function HeroSection() {
       <div className="content-center flex-auto w-full bg-white overflow-hidden rounded-lg">
         <div
           className={cn(
-            "grid min-[1024px]:grid-cols-2 hero-bg",
-            "py-10 tablet:py-16 px-6 tablet:px-8 min-[1024px]:px-16 desktopXL:px-[104px]"
+            "grid desktopDefault:grid-cols-2 hero-bg",
+            "py-10 tablet:py-16 px-6 tablet:px-8 desktopDefault:px-16 desktopXL:px-[104px]"
           )}
         >
           {/* ── LEFT COLUMN ── */}
-          <div className="min-[1024px]:max-w-[440px] pb-2 tablet:pb-10 pt-0 tablet:pt-10">
+          <div className="desktopDefault:max-w-[440px] pb-2 tablet:pb-10 pt-0 tablet:pt-10">
 
             {/* Social proof badge */}
             <div className="flex items-center gap-2 border border-[#E2E8F0] rounded-full p-2 w-fit">
@@ -113,7 +113,7 @@ export default function HeroSection() {
             </div>
 
             {/* Feature badges — hidden on mobile, visible tablet+ */}
-            <div className="hidden tablet:flex gap-3 mt-[76px] min-[1024px]:mb-0 mb-[76px]">
+            <div className="hidden tablet:flex gap-3 mt-[76px] desktopDefault:mb-0 mb-[76px]">
               {/* Fast badge */}
               <div className="flex-1 flex items-center gap-3">
                 <div className="size-10 bg-[#EDE9FE] flex items-center justify-center rounded-full shrink-0">
@@ -143,10 +143,10 @@ export default function HeroSection() {
           </div>
 
           {/* ── RIGHT COLUMN: app mockups — desktop + mobile ── */}
-          <div className="relative overflow-hidden min-[1024px]:overflow-visible h-[280px] min-[1024px]:h-auto min-[1024px]:min-h-[500px] mt-6 min-[1024px]:mt-0">
+          <div className="clamp-desktop-height flex-1 relative mt-6 desktopDefault:mt-0">
 
             {/* Desktop payment dashboard mockup */}
-            <div className="desktop absolute bottom-0 left-auto min-[1024px]:left-[80px] right-[-20px] min-[1024px]:right-auto border-[7px] border-[#EBEBEB] rounded-2xl overflow-hidden shadow-xl">
+            <div className="desktop absolute bottom-0 left-auto tablet:left-[80px] right-[-20px] tablet:right-auto border-[7px] border-[#EBEBEB] rounded-2xl overflow-hidden shadow-xl">
               <svg
                 className="clamp-desktop-width clamp-desktop-height"
                 viewBox="0 0 950 594"
@@ -240,7 +240,7 @@ export default function HeroSection() {
             </div>
 
             {/* Mobile payment app mockup */}
-            <div className="mobile absolute bottom-0 left-auto min-[1024px]:left-[16px] right-[140px] min-[1024px]:right-auto bg-[#EEEEEE] border-[5px] border-[#EEEEEE] rounded-3xl overflow-hidden shadow-xl">
+            <div className="mobile absolute bottom-0 left-auto tablet:left-[16px] right-[140px] tablet:right-auto bg-[#EEEEEE] border-[5px] border-[#EEEEEE] rounded-3xl overflow-hidden shadow-xl">
               <svg
                 className="clamp-mobile-width clamp-mobile-height"
                 viewBox="0 0 218 486"
@@ -294,7 +294,7 @@ export default function HeroSection() {
               <div
                 key={badge.id}
                 className={cn(
-                  "hidden min-[1024px]:flex items-center gap-2",
+                  "hidden desktopDefault:flex items-center gap-2",
                   "absolute z-10 px-3 py-2 rounded-xl shadow-lg border border-[#E2E8F0] bg-white",
                   badge.position,
                   badge.animClass
