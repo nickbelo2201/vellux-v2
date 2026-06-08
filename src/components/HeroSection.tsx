@@ -51,11 +51,11 @@ export default function HeroSection() {
         <div
           className={cn(
             "grid desktopDefault:grid-cols-2 hero-bg",
-            "py-16 px-6 tablet:px-8 desktopDefault:px-16 desktopXL:px-[104px]"
+            "py-10 tablet:py-16 px-6 tablet:px-8 desktopDefault:px-16 desktopXL:px-[104px]"
           )}
         >
           {/* ── LEFT COLUMN ── */}
-          <div className="desktopDefault:max-w-[440px] pb-10 pt-0 tablet:pt-10">
+          <div className="desktopDefault:max-w-[440px] pb-2 tablet:pb-10 pt-0 tablet:pt-10">
 
             {/* Social proof badge */}
             <div className="flex items-center gap-2 border border-[#E2E8F0] rounded-full p-2 w-fit">
@@ -141,7 +141,7 @@ export default function HeroSection() {
             </div>
 
             {/* Mobile features section — 2 column grid cards */}
-            <div className="mobile-features-section tablet:hidden mt-[76px] mb-[76px]">
+            <div className="mobile-features-section tablet:hidden mt-10 mb-4">
               {/* Fast card */}
               <div className="mobile-feature-card">
                 <div className="mobile-feature-icon">
