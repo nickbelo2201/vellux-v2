@@ -146,7 +146,7 @@ export default function HeroSection() {
           <div className="relative overflow-hidden desktopDefault:overflow-visible h-[280px] desktopDefault:h-auto desktopDefault:min-h-[500px] mt-6 desktopDefault:mt-0">
 
             {/* Desktop payment dashboard mockup */}
-            <div className="desktop absolute bottom-0 left-[80px] border-[7px] border-[#EBEBEB] rounded-2xl overflow-hidden shadow-xl">
+            <div className="desktop absolute bottom-0 left-auto desktopDefault:left-[80px] right-[-20px] desktopDefault:right-auto border-[7px] border-[#EBEBEB] rounded-2xl overflow-hidden shadow-xl">
               <svg
                 className="clamp-desktop-width clamp-desktop-height"
                 viewBox="0 0 950 594"
@@ -240,7 +240,7 @@ export default function HeroSection() {
             </div>
 
             {/* Mobile payment app mockup */}
-            <div className="mobile absolute bottom-0 left-[16px] bg-[#EEEEEE] border-[5px] border-[#EEEEEE] rounded-3xl overflow-hidden shadow-xl">
+            <div className="mobile absolute bottom-0 left-auto desktopDefault:left-[16px] right-[140px] desktopDefault:right-auto bg-[#EEEEEE] border-[5px] border-[#EEEEEE] rounded-3xl overflow-hidden shadow-xl">
               <svg
                 className="clamp-mobile-width clamp-mobile-height"
                 viewBox="0 0 218 486"
