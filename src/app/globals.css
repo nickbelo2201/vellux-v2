@@ -259,64 +259,6 @@
   animation: marquee-left 40s linear infinite;
 }
 
-/* ============================================================
-   Mobile overrides (max-width: 810px)
-   ============================================================ */
-@media screen and (max-width: 810px) {
-  /* Raio reduzido para criar diagonal no canto superior direito no mobile */
-  .hero-bg {
-    background: radial-gradient(
-      74% 85% at 37% 5%,
-      rgba(255, 255, 255, 0) 56.43%,
-      rgb(124, 58, 237) 80.92%,
-      rgb(30, 58, 138) 100%
-    ), #ffffff;
-  }
-
-  .mobile-features-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    padding: 8px 0 28px;
-  }
-
-  .mobile-feature-card {
-    background: rgba(255, 255, 255, 0.88);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(124, 58, 237, 0.22);
-    border-radius: 16px;
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.12), 0 1px 3px rgba(0, 0, 0, 0.06);
-  }
-
-  .mobile-feature-icon {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: #ede9fe;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .mobile-feature-title {
-    font-weight: 700;
-    font-size: 13px;
-    color: #1e3a8a;
-    line-height: 1.2;
-  }
-
-  .mobile-feature-subtitle {
-    font-weight: 400;
-    font-size: 11px;
-    color: #475569;
-    line-height: 1.5;
-  }
-}
 
 /* ============================================================
    Responsive breakpoints
