@@ -139,6 +139,27 @@ export default function HeroSection() {
                 </div>
               </div>
             </div>
+
+            {/* Mobile features section — 2 column grid cards */}
+            <div className="mobile-features-section tablet:hidden mt-[76px] mb-[76px]">
+              {/* Fast card */}
+              <div className="mobile-feature-card">
+                <div className="mobile-feature-icon">
+                  <BoltIcon className="size-4 text-[#7C3AED]" />
+                </div>
+                <h3 className="mobile-feature-title">Rápido</h3>
+                <p className="mobile-feature-subtitle">Pronto em 5 dias, não em meses.</p>
+              </div>
+
+              {/* Secure card */}
+              <div className="mobile-feature-card">
+                <div className="mobile-feature-icon">
+                  <LockClosedIcon className="size-4 text-[#7C3AED]" />
+                </div>
+                <h3 className="mobile-feature-title">Sem complicação</h3>
+                <p className="mobile-feature-subtitle">Você não precisa entender de tecnologia.</p>
+              </div>
+            </div>
           </div>
 
           {/* ── RIGHT COLUMN: app mockups — desktop only ── */}

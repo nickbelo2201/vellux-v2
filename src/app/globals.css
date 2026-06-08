@@ -260,6 +260,52 @@
 }
 
 /* ============================================================
+   Mobile features section (max-width: 768px)
+   ============================================================ */
+@media screen and (max-width: 768px) {
+  .mobile-features-section {
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 0 20px 24px;
+  }
+
+  .mobile-feature-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .mobile-feature-icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+    background: #ede9fe;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .mobile-feature-title {
+    font-weight: 600;
+    font-size: 13px;
+    color: #1a0a4e;
+  }
+
+  .mobile-feature-subtitle {
+    font-weight: 400;
+    font-size: 11px;
+    color: #64748b;
+    line-height: 1.5;
+  }
+}
+
+/* ============================================================
    Responsive breakpoints
    ============================================================ */
 @media screen and (min-width: 811px) {
