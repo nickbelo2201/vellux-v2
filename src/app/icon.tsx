@@ -21,13 +21,14 @@ export default async function Icon() {
           justifyContent: "center",
           backgroundColor: "#ffffff",
           borderRadius: "50%",
+          overflow: "hidden",
         }}
       >
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
           src={logoSrc}
           alt="Velluxia"
-          style={{ width: "75%", height: "75%", objectFit: "contain" }}
+          style={{ width: "195%", objectFit: "cover" }}
         />
       </div>
     ),
