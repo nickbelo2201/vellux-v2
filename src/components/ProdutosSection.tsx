@@ -8,6 +8,10 @@ import {
   MousePointerClick,
   MessageCircle,
   Package,
+  Brain,
+  Bot,
+  Zap,
+  TrendingUp,
   type LucideIcon,
 } from "lucide-react";
 
@@ -46,6 +50,34 @@ const servicos: Servico[] = [
     description:
       "Site (ou página de captação) + automação de WhatsApp + Google Meu Negócio configurado. Tudo linkado: site, Google, WhatsApp e Instagram trabalhando juntos por você.",
     icon: Package,
+  },
+  {
+    id: "crm-inteligente",
+    label: "CRM Inteligente",
+    description:
+      "Chega de perder o histórico do cliente ou esquecer de dar retorno. O CRM organiza todos os seus leads automaticamente, registra cada conversa e te avisa quando é hora de agir. Você para de improvisar e começa a vender com processo.",
+    icon: Brain,
+  },
+  {
+    id: "ia-whatsapp",
+    label: "IA no WhatsApp",
+    description:
+      "Não é aquele menu chato de 'Digite 1 para falar com atendimento'. É uma IA que lê o que o cliente escreveu, entende o que ele precisa e responde como um humano treinado. Ela qualifica o lead e já agenda — sem você tocar no celular.",
+    icon: Bot,
+  },
+  {
+    id: "agente-sdr",
+    label: "Agente SDR com IA",
+    description:
+      "Imagina ter um vendedor que nunca descansa: aborda leads frios no WhatsApp, Instagram e e-mail, se apresenta, faz as perguntas certas e filtra quem tem interesse de verdade. Você só recebe os leads quentes — a IA faz o trabalho pesado.",
+    icon: Zap,
+  },
+  {
+    id: "agente-closer",
+    label: "Agente Closer com IA",
+    description:
+      "Uma IA treinada no seu produto que entra em ação na hora decisiva: manda a proposta certa, responde dúvidas, faz follow-up nos que sumiram e empurra o lead pro fechamento. Você fecha mais sem precisar ficar correndo atrás de ninguém.",
+    icon: TrendingUp,
   },
 ];
 

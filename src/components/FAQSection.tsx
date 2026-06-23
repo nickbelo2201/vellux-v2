@@ -38,6 +38,21 @@ const faqs = [
     answer:
       "Tem sim. A gente oferece suporte mensal (acompanhamento, atualizações, pequenos ajustes) se você quiser. Sem fidelidade, você escolhe continuar ou parar quando achar melhor.",
   },
+  {
+    question: "Preciso saber de tecnologia para usar a automação com IA?",
+    answer:
+      "Não. A gente cuida de toda a parte técnica: instalação, configuração e treinamento da IA. Você só usa o resultado — os leads chegando, os atendimentos acontecendo e os relatórios no seu painel. Se você sabe mexer no WhatsApp, você consegue acompanhar tudo.",
+  },
+  {
+    question: "Quanto tempo leva para a automação começar a funcionar?",
+    answer:
+      "Depende do que você vai usar, mas a maioria dos projetos vai ao ar em 7 a 14 dias. A gente configura, testa e só entrega quando está funcionando de verdade. Você não fica esperando meses para ver resultado.",
+  },
+  {
+    question: "E se a IA responder algo errado para o meu cliente?",
+    answer:
+      "A IA é treinada com as informações do seu negócio antes de entrar em contato com qualquer cliente. Ela só fala o que você aprovou. E nos casos em que ela não sabe responder, ela passa para você sem o cliente perceber a diferença.",
+  },
 ];
 
 export default function FAQSection() {
