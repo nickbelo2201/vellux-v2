@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import { useCart } from "@/lib/cart-context";
 import {
   Globe,
   MousePointerClick,
@@ -83,9 +84,11 @@ const servicos: Servico[] = [
 
 export default function ProdutosSection() {
   const [activeTab, setActiveTab] = useState<string>("site");
+  const { addItem, items } = useCart();
 
   const activeServico = servicos.find((s) => s.id === activeTab) ?? servicos[0];
   const ActiveIcon = activeServico.icon;
+  const isInCart = items.some((i) => i.id === activeServico.id);
 
   return (
     <section id="servicos" className="flex gap-[1px]">
@@ -144,9 +147,23 @@ export default function ProdutosSection() {
               <h3 className="font-fustat text-2xl font-semibold text-[#1E3A8A] mb-4">
                 {activeServico.label}
               </h3>
-              <p className="text-[#64748B] font-interTight text-base leading-[160%]">
+              <p className="text-[#64748B] font-interTight text-base leading-[160%] mb-6">
                 {activeServico.description}
               </p>
+              <button
+                onClick={() =>
+                  addItem({ id: activeServico.id, label: activeServico.label })
+                }
+                disabled={isInCart}
+                className={cn(
+                  "w-full py-3 rounded-full font-fustat font-semibold text-sm transition-all duration-200",
+                  isInCart
+                    ? "bg-[#EDE9FE] text-[#7C3AED] cursor-default"
+                    : "bg-[#1E3A8A] hover:bg-[#1e40af] text-white"
+                )}
+              >
+                {isInCart ? "✓ Adicionado ao carrinho" : "Comprar"}
+              </button>
             </div>
           </div>
         </div>

@@ -7,8 +7,10 @@ import {
   MenuIcon,
   CircleArrowRightIcon,
 } from "@/components/icons";
+import { ShoppingBag } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { WHATSAPP_URL } from "@/lib/contato";
+import { useCart } from "@/lib/cart-context";
 
 const navItems = [
   { label: "Serviços", href: "#servicos" },
@@ -19,6 +21,7 @@ const navItems = [
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const { items, openCart } = useCart();
 
   return (
     <header className="sticky top-0 z-50 flex gap-[1px]">
@@ -52,6 +55,19 @@ export default function Header() {
 
           {/* Desktop CTA */}
           <div className="hidden tablet:flex items-center gap-3">
+            {/* Cart icon */}
+            <button
+              onClick={openCart}
+              aria-label="Abrir carrinho"
+              className="relative p-2 rounded-lg hover:bg-[#F1F5F9] transition-colors"
+            >
+              <ShoppingBag className="size-5 text-[#1E3A8A]" />
+              {items.length > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 size-4 rounded-full bg-[#7C3AED] text-white text-[10px] font-bold flex items-center justify-center">
+                  {items.length}
+                </span>
+              )}
+            </button>
             <Link
               href={WHATSAPP_URL}
               target="_blank"

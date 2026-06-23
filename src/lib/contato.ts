@@ -1,5 +1,5 @@
 // Contato central da Velluxia.
-const WHATSAPP_NUMBER = "5511947091091";
+export const WHATSAPP_NUMBER = "5511947091091";
 
 export const WHATSAPP_MESSAGE =
   "Olá! Vim pelo site da Velluxia e quero um orçamento.";

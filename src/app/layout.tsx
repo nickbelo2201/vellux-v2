@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter_Tight, Fustat } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/lib/cart-context";
+import CartDrawer from "@/components/CartDrawer";
 
 const interTight = Inter_Tight({
   variable: "--font-inter-tight",
@@ -46,7 +48,12 @@ export default function RootLayout({
       lang="pt-BR"
       className={`${interTight.variable} ${fustat.variable} h-full antialiased`}
     >
-      <body className="min-h-full">{children}</body>
+      <body className="min-h-full">
+        <CartProvider>
+          {children}
+          <CartDrawer />
+        </CartProvider>
+      </body>
     </html>
   );
 }
